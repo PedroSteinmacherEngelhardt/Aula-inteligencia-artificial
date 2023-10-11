@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bchlckjueg50k"]
+
+[ext_resource type="Script" path="res://level/mundo.gd" id="1_m52re"]
+[ext_resource type="PackedScene" uid="uid://bvq0xdd4ca374" path="res://individuo/individuo.tscn" id="2_6rb4h"]
+
+[node name="Mundo" type="Node2D"]
+script = ExtResource("1_m52re")
+
+[node name="Individuo" parent="." instance=ExtResource("2_6rb4h")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.3, 0.3)

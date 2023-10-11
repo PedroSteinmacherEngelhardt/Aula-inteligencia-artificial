@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvq0xdd4ca374"]
+
+[ext_resource type="Script" path="res://individuo/individuo.gd" id="1_bv4rk"]
+[ext_resource type="Texture2D" uid="uid://y10iw6ysgc5i" path="res://icon.svg" id="2_qqvbo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_plbwu"]
+radius = 82.4924
+
+[node name="Individuo" type="CharacterBody2D"]
+script = ExtResource("1_bv4rk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qqvbo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_plbwu")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

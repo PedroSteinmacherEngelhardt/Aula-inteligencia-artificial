@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bchlckjueg50k"]
+
+[ext_resource type="Script" path="res://level/mundo.gd" id="1_m52re"]
+[ext_resource type="PackedScene" uid="uid://bvq0xdd4ca374" path="res://individuo/individuo.tscn" id="3_17457"]
+[ext_resource type="PackedScene" uid="uid://b0s8l671xcvgp" path="res://ui/menu.tscn" id="3_ejcox"]
+
+[node name="Mundo" type="Node2D"]
+script = ExtResource("1_m52re")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Menu" parent="CanvasLayer" instance=ExtResource("3_ejcox")]
+anchors_preset = -1
+anchor_left = -1.213
+anchor_top = -1.127
+anchor_right = -1.213
+anchor_bottom = -1.127
+offset_left = 1397.38
+offset_top = 730.296
+offset_right = 2152.38
+offset_bottom = 1074.3
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.3, 0.3)
+
+[node name="Individuo" parent="." instance=ExtResource("3_17457")]
+position = Vector2(1, -4)

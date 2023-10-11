@@ -1,0 +1,159 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0s8l671xcvgp"]
+
+[ext_resource type="Script" path="res://ui/menu.gd" id="1_6m8jo"]
+
+[node name="Menu" type="Control"]
+top_level = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_6m8jo")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="quantidadeComidinhas" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/quantidadeComidinhas"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1000.0
+allow_greater = true
+
+[node name="SpinBox" type="SpinBox" parent="MarginContainer/VBoxContainer/quantidadeComidinhas"]
+layout_mode = 2
+max_value = 1000.0
+allow_greater = true
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/quantidadeComidinhas"]
+layout_mode = 2
+text = "qntComidinhas"
+
+[node name="timerComidinhas" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/timerComidinhas"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+allow_greater = true
+
+[node name="SpinBox" type="SpinBox" parent="MarginContainer/VBoxContainer/timerComidinhas"]
+layout_mode = 2
+allow_greater = true
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/timerComidinhas"]
+layout_mode = 2
+text = "timerComidinhas"
+
+[node name="energiaMitosis" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/energiaMitosis"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 300.0
+allow_greater = true
+
+[node name="SpinBox" type="SpinBox" parent="MarginContainer/VBoxContainer/energiaMitosis"]
+layout_mode = 2
+max_value = 300.0
+allow_greater = true
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/energiaMitosis"]
+layout_mode = 2
+text = "energiaMitosis"
+
+[node name="chanceMutacao" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/chanceMutacao"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="SpinBox" type="SpinBox" parent="MarginContainer/VBoxContainer/chanceMutacao"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/chanceMutacao"]
+layout_mode = 2
+text = "chanceMutação"
+
+[node name="tickRate" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/tickRate"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="SpinBox" type="SpinBox" parent="MarginContainer/VBoxContainer/tickRate"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/tickRate"]
+layout_mode = 2
+text = "tickRate"
+
+[node name="tamanhoMapa" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/tamanhoMapa"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 1000.0
+max_value = 10000.0
+value = 1000.0
+allow_greater = true
+
+[node name="SpinBox" type="SpinBox" parent="MarginContainer/VBoxContainer/tamanhoMapa"]
+layout_mode = 2
+min_value = 1000.0
+max_value = 10000.0
+allow_greater = true
+allow_lesser = true
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/tamanhoMapa"]
+layout_mode = 2
+text = "tickRate"
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/quantidadeComidinhas/HSlider" to="." method="onQuantidadeComidinhas"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/quantidadeComidinhas/SpinBox" to="." method="onQuantidadeComidinhas"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/timerComidinhas/HSlider" to="." method="onTimerComidinhas"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/timerComidinhas/SpinBox" to="." method="onTimerComidinhas"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/energiaMitosis/HSlider" to="." method="onEnergiaMitosis"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/energiaMitosis/SpinBox" to="." method="onEnergiaMitosis"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/chanceMutacao/HSlider" to="." method="onChanceMutacao"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/chanceMutacao/SpinBox" to="." method="onChanceMutacao"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/tickRate/HSlider" to="." method="onTickRate"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/tickRate/SpinBox" to="." method="onTickRate"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/tamanhoMapa/HSlider" to="." method="onTamanhoMapa"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/tamanhoMapa/SpinBox" to="." method="onTamanhoMapa"]

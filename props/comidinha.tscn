@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjlr2j8ot5t4"]
+
+[ext_resource type="Script" path="res://props/comidinha.gd" id="1_wsro5"]
+[ext_resource type="Texture2D" uid="uid://y10iw6ysgc5i" path="res://icon.svg" id="2_30dmn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_152ur"]
+radius = 85.0
+
+[node name="comidinha" type="Area2D"]
+modulate = Color(0, 0.6, 0, 1)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_wsro5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_30dmn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_152ur")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
